@@ -6,16 +6,22 @@ using System.Threading.Tasks;
 
 namespace Simple_To_Do_List
 {
-    class meeting : activity
+    class Meeting : Activity
     {
-        private int wwho;
+        private string wwho;
         private string place;
 
-        public meeting(DateTime dateTime, int wwho, string place)
+        public Meeting(DateTime dateTime, int wwho, string place)
         {
             this.dateTime = dateTime;
-            this.wwho = wwho;
+            this.wwho = Contact.contactList[wwho];
             this.place = place;
+        }
+
+        public static void AddMeeting(DateTime dateTime, int wwho, string place)
+        {
+            Activity.ActivitiesList.Add(new Meeting(dateTime, wwho, place));
+            Save("activites.dat", Activity.ActivitiesList);
         }
     }
 }
