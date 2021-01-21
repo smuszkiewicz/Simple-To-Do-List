@@ -11,7 +11,7 @@ namespace Simple_To_Do_List
         static private List<string> duties = new List<string>();
         private string type;
 
-        public Duty(DateTime dateTime, int type)
+        private Duty(DateTime dateTime, int type)
         {
             this.dateTime = dateTime;
             this.type = duties[type];
@@ -19,8 +19,15 @@ namespace Simple_To_Do_List
 
         public static void AddDuty(DateTime dateTime, int type)
         {
-            Activity.ActivitiesList.Add(new Duty(dateTime, type));
-            Save("activites.dat", Activity.ActivitiesList);
+            try
+            {
+                Activity.ActivitiesList.Add(new Duty(dateTime, type));
+                SaveLoad.Save("activites.dat", Activity.ActivitiesList);
+            }
+            catch
+            {
+                throw new Exception("Nie udało się dodać :<");
+            }
         }
 
     }

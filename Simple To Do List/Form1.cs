@@ -16,5 +16,13 @@ namespace Simple_To_Do_List
         {
             InitializeComponent();
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            Activity.ActivitiesList = SaveLoad.Load<Activity>("activites.dat");
+            Contact.ContactList = SaveLoad.Load<Contact>("contacts.dat");
+            Homework.Subjects = SaveLoad.Load<string>("subjects.dat");
+            listBox1.DataSource = Activity.ActivitiesList;
+        }
     }
 }
