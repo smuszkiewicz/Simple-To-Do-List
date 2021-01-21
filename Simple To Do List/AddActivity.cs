@@ -19,7 +19,25 @@ namespace Simple_To_Do_List
 
         private void AddActivity_Load(object sender, EventArgs e)
         {
-            comboBox1.DataSource = 
+            comboBox1.DataSource = Activity.TypesOfActivities;
+            comboBox1.DisplayMember = "PolishName";
+            comboBox1.ValueMember = "Name";
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+            if (comboBox1.SelectedItem.ToString() == "Phone")
+            {
+                label3.Text = "Do kogo?";
+                label3.Visible = true;
+                
+            }
         }
     }
 }
