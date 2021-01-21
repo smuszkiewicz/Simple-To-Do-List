@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Simple_To_Do_List
 {
-    public partial class Form1 : Form
+    public partial class MainPanel : Form
     {
-        public Form1()
+        public MainPanel()
         {
             InitializeComponent();
         }
@@ -28,6 +28,12 @@ namespace Simple_To_Do_List
         private void button5_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            AddActivity addActivity = new AddActivity();
+            addActivity.Show();
         }
     }
 }

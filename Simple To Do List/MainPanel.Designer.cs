@@ -1,7 +1,7 @@
 ﻿
 namespace Simple_To_Do_List
 {
-    partial class Form1
+    partial class MainPanel
     {
         /// <summary>
         /// Required designer variable.
@@ -66,6 +66,7 @@ namespace Simple_To_Do_List
             this.button1.TabIndex = 2;
             this.button1.Text = "Dodaj zadanie";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -108,10 +109,12 @@ namespace Simple_To_Do_List
             // 
             this.phoneBindingSource.DataSource = typeof(Simple_To_Do_List.Phone);
             // 
-            // Form1
+            // MainPanel
             // 
+            this.AcceptButton = this.button1;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(330, 339);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
@@ -120,7 +123,10 @@ namespace Simple_To_Do_List
             this.Controls.Add(this.button1);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.label1);
-            this.Name = "Form1";
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.Name = "MainPanel";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.phoneBindingSource)).EndInit();
