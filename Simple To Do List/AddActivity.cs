@@ -16,5 +16,10 @@ namespace Simple_To_Do_List
         {
             InitializeComponent();
         }
+
+        private void AddActivity_Load(object sender, EventArgs e)
+        {
+            comboBox1.DataSource = 
+        }
     }
 }
