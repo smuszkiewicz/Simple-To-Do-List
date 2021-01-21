@@ -24,5 +24,10 @@ namespace Simple_To_Do_List
             Homework.Subjects = SaveLoad.Load<string>("subjects.dat");
             listBox1.DataSource = Activity.ActivitiesList;
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

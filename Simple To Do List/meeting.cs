@@ -14,7 +14,7 @@ namespace Simple_To_Do_List
         private Meeting(DateTime dateTime, int wwho, string place)
         {
             this.dateTime = dateTime;
-            this.wwho = Contact.contactList[wwho].ToString();
+            this.wwho = Contact.ContactList[wwho].ToString();
             this.place = place;
         }
 

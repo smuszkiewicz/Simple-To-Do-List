@@ -14,7 +14,7 @@ namespace Simple_To_Do_List
         private Phone(DateTime dateTime, int twho, string topic)
         {
             this.dateTime = dateTime;
-            this.twho = Contact.contactList[twho].ToString();
+            this.twho = Contact.ContactList[twho].ToString();
             this.topic = topic;
         }
 

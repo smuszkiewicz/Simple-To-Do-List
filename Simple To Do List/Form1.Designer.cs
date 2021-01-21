@@ -32,12 +32,12 @@ namespace Simple_To_Do_List
             this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.listBox1 = new System.Windows.Forms.ListBox();
-            this.phoneBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
+            this.phoneBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.phoneBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -57,10 +57,6 @@ namespace Simple_To_Do_List
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(226, 303);
             this.listBox1.TabIndex = 1;
-            // 
-            // phoneBindingSource
-            // 
-            this.phoneBindingSource.DataSource = typeof(Simple_To_Do_List.Phone);
             // 
             // button1
             // 
@@ -106,6 +102,11 @@ namespace Simple_To_Do_List
             this.button5.TabIndex = 6;
             this.button5.Text = "Wyjście";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // phoneBindingSource
+            // 
+            this.phoneBindingSource.DataSource = typeof(Simple_To_Do_List.Phone);
             // 
             // Form1
             // 
