@@ -89,11 +89,12 @@ namespace Simple_To_Do_List
             // 
             // button1
             // 
+            this.button1.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.button1.Location = new System.Drawing.Point(15, 87);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 6;
-            this.button1.Text = "Anuluj";
+            this.button1.Text = "Wyjdź";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 

@@ -15,6 +15,7 @@ namespace Simple_To_Do_List
         protected DateTime dateTime;
         protected string note;
         private static BindingList<Activity> activitiesList = new BindingList<Activity>();
+        private static BindingList<Activity> doneActivities = new BindingList<Activity>();
         private static BindingList<Type> typesOfActivities = new BindingList<Type>
         {
             new Type() {Name = nameof(Meeting), PolishName = "Spotkanie" },
@@ -25,22 +26,27 @@ namespace Simple_To_Do_List
 
         public static BindingList<Activity> ActivitiesList { get => activitiesList; set => activitiesList = value; }
         public static BindingList<Type> TypesOfActivities { get => typesOfActivities; set => typesOfActivities = value; }
+        public DateTime DateTime { get => dateTime; set => dateTime = value; }
+        public string Note { get => note; set => note = value; }
+        public static BindingList<Activity> DoneActivities { get => doneActivities; set => doneActivities = value; }
 
-        public override string ToString()
-        {
-            return this.GetType().Name;
-        }
         public static void RemoveActivity(int i)
         {
             try
             {
                 activitiesList.RemoveAt(i);
-                SaveLoad.Save("activites.dat", activitiesList);
+                SaveLoad.Save("activities.dat", activitiesList);
             }
             catch
             {
                 throw new Exception("Nie udało się usunąć :<");
             }
+        }
+        public static void MoveToDone(int i)
+        {
+            doneActivities.Add(activitiesList[i]);
+            activitiesList.RemoveAt(i);
+            SaveLoad.Save("doneActivities.dat", doneActivities);
         }
     }
 }

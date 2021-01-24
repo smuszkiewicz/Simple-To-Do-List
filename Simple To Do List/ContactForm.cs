@@ -12,14 +12,32 @@ namespace Simple_To_Do_List
 {
     public partial class ContactForm : Form
     {
-        public ContactForm()
+        private int t;
+        public ContactForm(int t)
         {
             InitializeComponent();
+            if (t == 1)
+            {
+                listBox1.DataSource = Contact.ContactList;
+                Text = "Kontakty";
+                this.t = t;
+            }
+            else if (t == 2)
+            {
+                listBox1.DataSource = Homework.Subjects;
+                Text = "Przedmioty";
+                this.t = t;
+            }
+            else if (t == 3)
+            {
+                listBox1.DataSource = Duty.DutiesTypes;
+                Text = "Obowiązki domowe";
+                this.t = t;
+            }
         }
 
         private void ContactForm_Load(object sender, EventArgs e)
         {
-            listBox1.DataSource = Contact.ContactList;
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -29,20 +47,47 @@ namespace Simple_To_Do_List
 
         private void button2_Click(object sender, EventArgs e)
         {
-            try
+            if (t == 1)
             {
-                Contact.RemoveContact(listBox1.SelectedIndex);
+                try
+                {
+                    Contact.RemoveContact(listBox1.SelectedIndex);
+                }
+                catch (Exception exception)
+                {
+                    Error errorBox = new Error(exception.Message);
+                    errorBox.Show();
+                }
             }
-            catch (Exception exception)
+            else if (t == 2)
             {
-                Error errorBox = new Error(exception.Message);
-                errorBox.Show();
+                try
+                {
+                    Homework.RemoveSubject(listBox1.SelectedIndex);
+                }
+                catch (Exception exception)
+                {
+                    Error errorBox = new Error(exception.Message);
+                    errorBox.Show();
+                }
+            }
+            else if (t == 3)
+            {
+                try
+                {
+                    Duty.RemoveDutyType(listBox1.SelectedIndex);
+                }
+                catch (Exception exception)
+                {
+                    Error errorBox = new Error(exception.Message);
+                    errorBox.Show();
+                }
             }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            AddContactForm addContactForm = new AddContactForm();
+            AddContactForm addContactForm = new AddContactForm(t);
             addContactForm.Show();
         }
     }

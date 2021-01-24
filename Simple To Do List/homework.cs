@@ -27,7 +27,8 @@ namespace Simple_To_Do_List
             try
             {
                 Activity.ActivitiesList.Add(new Homework(dateTime, type, note));
-                SaveLoad.Save("activites.dat", Activity.ActivitiesList);
+                Activity.ActivitiesList = new BindingList<Activity>(Activity.ActivitiesList.OrderBy(x => x.DateTime).ToList());
+                SaveLoad.Save("activities.dat", Activity.ActivitiesList);
             }
             catch
             {
@@ -57,6 +58,10 @@ namespace Simple_To_Do_List
             {
                 throw new Exception("Nie udało się usunąć :<");
             }
+        }
+        public override string ToString()
+        {
+            return dateTime.ToString("dd/MM/yyyy") + " Praca domowa z " + subject;
         }
 
     }

@@ -7,6 +7,7 @@ using System.ComponentModel;
 
 namespace Simple_To_Do_List
 {
+    [Serializable]
     class Duty : Activity
     {
         static private BindingList<string> dutiesTypes = new BindingList<string>();
@@ -26,7 +27,8 @@ namespace Simple_To_Do_List
             try
             {
                 Activity.ActivitiesList.Add(new Duty(dateTime, type, note));
-                SaveLoad.Save("activites.dat", Activity.ActivitiesList);
+                Activity.ActivitiesList = new BindingList<Activity>(Activity.ActivitiesList.OrderBy(x => x.DateTime).ToList());
+                SaveLoad.Save("activities.dat", Activity.ActivitiesList);
             }
             catch
             {
@@ -57,6 +59,10 @@ namespace Simple_To_Do_List
             {
                 throw new Exception("Nie udało się usunąć :<");
             }
+        }
+        public override string ToString()
+        {
+            return dateTime.ToString("dd/MM/yyyy") + " " + type;
         }
 
     }

@@ -66,6 +66,12 @@
     <Compile Include="ContactForm.Designer.cs">
       <DependentUpon>ContactForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="DoneActForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DoneActForm.Designer.cs">
+      <DependentUpon>DoneActForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Duty.cs" />
     <Compile Include="Error.cs">
       <SubType>Form</SubType>
@@ -94,6 +100,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ContactForm.resx">
       <DependentUpon>ContactForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DoneActForm.resx">
+      <DependentUpon>DoneActForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Error.resx">
       <DependentUpon>Error.cs</DependentUpon>

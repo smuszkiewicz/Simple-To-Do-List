@@ -84,15 +84,14 @@ namespace Simple_To_Do_List
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(12, 89);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(35, 13);
+            this.label3.Size = new System.Drawing.Size(39, 13);
             this.label3.TabIndex = 4;
-            this.label3.Text = "label3";
-            this.label3.Visible = false;
+            this.label3.Text = "Z kim?";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // comboBox2
             // 
             this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox2.Enabled = false;
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Location = new System.Drawing.Point(12, 105);
             this.comboBox2.Name = "comboBox2";
@@ -123,7 +122,7 @@ namespace Simple_To_Do_List
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 8;
-            this.button1.Text = "Anuluj";
+            this.button1.Text = "Wyjdź";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -158,7 +157,7 @@ namespace Simple_To_Do_List
             this.MaximizeBox = false;
             this.Name = "AddActivity";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "AddActivity";
+            this.Text = "Dodaj zadanie";
             this.Load += new System.EventHandler(this.AddActivity_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

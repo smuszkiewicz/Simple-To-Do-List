@@ -40,7 +40,7 @@ namespace Simple_To_Do_List
 
         public override string ToString()
         {
-            return fName + " " + sName + "(" + number + ")";
+            return fName + " " + sName + " (" + number + ")";
         }
         public static void RemoveContact(int i)
         {
