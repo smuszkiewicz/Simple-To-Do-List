@@ -10,7 +10,7 @@ namespace Simple_To_Do_List
     [Serializable]
     class Contact
     {
-        private static List<Contact> contactList = new List<Contact>();
+        private static BindingList<Contact> contactList = new BindingList<Contact>();
         private string fName;
         private string sName;
         private string number;
@@ -23,7 +23,7 @@ namespace Simple_To_Do_List
             this.number = number;
         }
 
-        internal static List<Contact> ContactList { get => contactList; set => contactList = value; }
+        internal static BindingList<Contact> ContactList { get => contactList; set => contactList = value; }
 
         public static void AddContact(string fName, string sName, string number)
         {

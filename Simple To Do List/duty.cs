@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.ComponentModel;
 
 namespace Simple_To_Do_List
 {
     class Duty : Activity
     {
-        static private List<string> dutiesTypes = new List<string>();
+        static private BindingList<string> dutiesTypes = new BindingList<string>();
         private string type;
 
         private Duty(DateTime dateTime, int type, string note)
@@ -18,7 +19,7 @@ namespace Simple_To_Do_List
             this.note = note;
         }
 
-        public static List<string> DutiesTypes { get => dutiesTypes; set => dutiesTypes = value; }
+        public static BindingList<string> DutiesTypes { get => dutiesTypes; set => dutiesTypes = value; }
 
         public static void AddDuty(DateTime dateTime, int type, string note)
         {

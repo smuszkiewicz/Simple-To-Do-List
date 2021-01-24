@@ -109,8 +109,10 @@ namespace Simple_To_Do_List
             // 
             // AddContactForm
             // 
+            this.AcceptButton = this.button2;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.button1;
             this.ClientSize = new System.Drawing.Size(193, 122);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);

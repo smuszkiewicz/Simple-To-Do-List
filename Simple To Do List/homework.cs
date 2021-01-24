@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.ComponentModel;
 
 namespace Simple_To_Do_List
 {
     [Serializable]
     class Homework : Activity
     {
-        private static List<string> subjects = new List<string>();
+        private static BindingList<string> subjects = new BindingList<string>();
         private string subject;
 
         private Homework(DateTime dateTime, int type, string note)
@@ -19,7 +20,7 @@ namespace Simple_To_Do_List
             this.note = note;
         }
 
-        public static List<string> Subjects { get => subjects; set => subjects = value; }
+        public static BindingList<string> Subjects { get => subjects; set => subjects = value; }
 
         public static void AddHomework(DateTime dateTime, int type, string note)
         {

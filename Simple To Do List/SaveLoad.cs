@@ -5,13 +5,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
+using System.ComponentModel;
 
 
 namespace Simple_To_Do_List
 {
     static class SaveLoad
     {
-        public static void Save<T>(string fileName, List<T> list)
+        public static void Save<T>(string fileName, BindingList<T> list)
         {
             try
             {
@@ -20,7 +21,6 @@ namespace Simple_To_Do_List
                     var formatter = new BinaryFormatter();
                     formatter.Serialize(stream, list);
                 }
-
             }
             catch (Exception ex)
             {
@@ -28,9 +28,9 @@ namespace Simple_To_Do_List
             }
         }
 
-        public static List<T> Load<T>(string fileName)
+        public static BindingList<T> Load<T>(string fileName)
         {
-            var list = new List<T>();
+            var list = new BindingList<T>();
             if (File.Exists(fileName))
             {
                 try
@@ -38,7 +38,7 @@ namespace Simple_To_Do_List
                     using (var stream = new FileStream(fileName, FileMode.Open, FileAccess.Read))
                     {
                         var formatter = new BinaryFormatter();
-                        list = (List<T>)
+                        list = (BindingList<T>)
                             formatter.Deserialize(stream);
                     }
                 }

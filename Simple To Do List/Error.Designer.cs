@@ -40,6 +40,7 @@ namespace Simple_To_Do_List
             this.label1.Size = new System.Drawing.Size(299, 66);
             this.label1.TabIndex = 0;
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // button1
             // 
@@ -56,6 +57,7 @@ namespace Simple_To_Do_List
             this.AcceptButton = this.button1;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.button1;
             this.ClientSize = new System.Drawing.Size(325, 111);
             this.ControlBox = false;
             this.Controls.Add(this.button1);

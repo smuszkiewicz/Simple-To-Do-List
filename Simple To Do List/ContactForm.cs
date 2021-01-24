@@ -32,7 +32,6 @@ namespace Simple_To_Do_List
             try
             {
                 Contact.RemoveContact(listBox1.SelectedIndex);
-                listBox1.Update();
             }
             catch (Exception exception)
             {
@@ -45,10 +44,6 @@ namespace Simple_To_Do_List
         {
             AddContactForm addContactForm = new AddContactForm();
             addContactForm.Show();
-        }
-        public void ListBox1Refresh()
-        {
-            listBox1.Update();
         }
     }
 }

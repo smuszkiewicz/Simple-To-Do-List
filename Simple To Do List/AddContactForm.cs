@@ -29,8 +29,6 @@ namespace Simple_To_Do_List
                 try
                 {
                     Contact.AddContact(textBox1.Text, textBox2.Text, textBox3.Text);
-                    ContactForm contactForm = new ContactForm();
-                    contactForm.ListBox1Refresh();
                     this.Close();
                 }
                 catch (Exception exception)

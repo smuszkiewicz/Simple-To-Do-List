@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
+using System.ComponentModel;
 
 namespace Simple_To_Do_List
 {
@@ -13,8 +14,8 @@ namespace Simple_To_Do_List
     {
         protected DateTime dateTime;
         protected string note;
-        private static List<Activity> activitiesList = new List<Activity>();
-        private static List<Type> typesOfActivities = new List<Type>
+        private static BindingList<Activity> activitiesList = new BindingList<Activity>();
+        private static BindingList<Type> typesOfActivities = new BindingList<Type>
         {
             new Type() {Name = nameof(Meeting), PolishName = "Spotkanie" },
             new Type() {Name = nameof(Phone), PolishName = "Telefon" },
@@ -22,8 +23,8 @@ namespace Simple_To_Do_List
             new Type() {Name = nameof(Homework), PolishName = "Praca domowa" },
         };
 
-        public static List<Activity> ActivitiesList { get => activitiesList; set => activitiesList = value; }
-        public static List<Type> TypesOfActivities { get => typesOfActivities; set => typesOfActivities = value; }
+        public static BindingList<Activity> ActivitiesList { get => activitiesList; set => activitiesList = value; }
+        public static BindingList<Type> TypesOfActivities { get => typesOfActivities; set => typesOfActivities = value; }
 
         public override string ToString()
         {

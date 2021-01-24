@@ -28,5 +28,10 @@ namespace Simple_To_Do_List
         {
             this.Close();
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
