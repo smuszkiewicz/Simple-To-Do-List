@@ -12,6 +12,7 @@ namespace Simple_To_Do_List
     abstract class Activity
     {
         protected DateTime dateTime;
+        protected string note;
         private static List<Activity> activitiesList = new List<Activity>();
         private static List<Type> typesOfActivities = new List<Type>
         {
@@ -27,6 +28,18 @@ namespace Simple_To_Do_List
         public override string ToString()
         {
             return this.GetType().Name;
+        }
+        public static void RemoveActivity(int i)
+        {
+            try
+            {
+                activitiesList.RemoveAt(i);
+                SaveLoad.Save("activites.dat", activitiesList);
+            }
+            catch
+            {
+                throw new Exception("Nie udało się usunąć :<");
+            }
         }
     }
 }

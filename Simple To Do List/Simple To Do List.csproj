@@ -53,8 +53,26 @@
     <Compile Include="AddActivity.Designer.cs">
       <DependentUpon>AddActivity.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddContactForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddContactForm.Designer.cs">
+      <DependentUpon>AddContactForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Contact.cs" />
+    <Compile Include="ContactForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ContactForm.Designer.cs">
+      <DependentUpon>ContactForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Duty.cs" />
+    <Compile Include="Error.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Error.Designer.cs">
+      <DependentUpon>Error.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainPanel.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -70,6 +88,15 @@
     <Compile Include="Type.cs" />
     <EmbeddedResource Include="AddActivity.resx">
       <DependentUpon>AddActivity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddContactForm.resx">
+      <DependentUpon>AddContactForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ContactForm.resx">
+      <DependentUpon>ContactForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Error.resx">
+      <DependentUpon>Error.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainPanel.resx">
       <DependentUpon>MainPanel.cs</DependentUpon>

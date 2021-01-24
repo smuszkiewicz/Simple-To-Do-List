@@ -12,19 +12,20 @@ namespace Simple_To_Do_List
         private static List<string> subjects = new List<string>();
         private string subject;
 
-        private Homework(DateTime dateTime, int type)
+        private Homework(DateTime dateTime, int type, string note)
         {
             this.dateTime = dateTime;
             this.subject = subjects[type];
+            this.note = note;
         }
 
         public static List<string> Subjects { get => subjects; set => subjects = value; }
 
-        public static void AddHomework(DateTime dateTime, int type)
+        public static void AddHomework(DateTime dateTime, int type, string note)
         {
             try
             {
-                Activity.ActivitiesList.Add(new Homework(dateTime, type));
+                Activity.ActivitiesList.Add(new Homework(dateTime, type, note));
                 SaveLoad.Save("activites.dat", Activity.ActivitiesList);
             }
             catch
@@ -42,6 +43,18 @@ namespace Simple_To_Do_List
             catch
             {
                 throw new Exception("Nie udało się dodać :<");
+            }
+        }
+        public static void RemoveSubject(int i)
+        {
+            try
+            {
+                subjects.RemoveAt(i);
+                SaveLoad.Save("subjects.dat", subjects);
+            }
+            catch
+            {
+                throw new Exception("Nie udało się usunąć :<");
             }
         }
 

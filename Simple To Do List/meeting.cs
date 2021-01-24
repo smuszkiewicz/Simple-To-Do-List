@@ -9,18 +9,17 @@ namespace Simple_To_Do_List
     class Meeting : Activity
     {
         private string wwho;
-        private string place;
 
-        private Meeting(DateTime dateTime, int wwho, string place)
+        private Meeting(DateTime dateTime, int wwho, string note)
         {
             this.dateTime = dateTime;
             this.wwho = Contact.ContactList[wwho].ToString();
-            this.place = place;
+            this.note = note;
         }
 
-        public static void AddMeeting(DateTime dateTime, int wwho, string place)
+        public static void AddMeeting(DateTime dateTime, int wwho, string note)
         {
-            Activity.ActivitiesList.Add(new Meeting(dateTime, wwho, place));
+            Activity.ActivitiesList.Add(new Meeting(dateTime, wwho, note));
             SaveLoad.Save("activites.dat", Activity.ActivitiesList);
         }
     }

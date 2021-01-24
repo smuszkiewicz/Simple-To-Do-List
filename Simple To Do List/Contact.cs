@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.ComponentModel;
 
 namespace Simple_To_Do_List
 {
@@ -13,6 +14,7 @@ namespace Simple_To_Do_List
         private string fName;
         private string sName;
         private string number;
+        
 
         private Contact(string fName, string sName, string number)
         {
@@ -23,7 +25,7 @@ namespace Simple_To_Do_List
 
         internal static List<Contact> ContactList { get => contactList; set => contactList = value; }
 
-        public void AddContact(string fName, string sName, string number)
+        public static void AddContact(string fName, string sName, string number)
         {
             try
             {
@@ -35,5 +37,23 @@ namespace Simple_To_Do_List
                 throw new Exception("Nie udało się dodać :<");
             }
         }
+
+        public override string ToString()
+        {
+            return fName + " " + sName + "(" + number + ")";
+        }
+        public static void RemoveContact(int i)
+        {
+            try
+            {
+                contactList.RemoveAt(i);
+                SaveLoad.Save("contacts.dat", contactList);
+            }
+            catch
+            {
+                throw new Exception("Nie udało się usunąć :<");
+            }
+        }
+
     }
 }

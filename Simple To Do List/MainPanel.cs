@@ -35,5 +35,24 @@ namespace Simple_To_Do_List
             AddActivity addActivity = new AddActivity();
             addActivity.Show();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Activity.RemoveActivity(listBox1.SelectedIndex);
+            }
+            catch (Exception exception)
+            {
+                Error errorBox = new Error(exception.Message);
+                errorBox.Show();
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            ContactForm contactForm = new ContactForm();
+            contactForm.Show();
+        }
     }
 }
